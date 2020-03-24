@@ -13,13 +13,9 @@ const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 
 const db = knex({
-  client: 'pg',
-  connection: {
-    host : '127.0.0.1',
-    user : 'aneagoie',
-    password : '',
-    database : 'smart-brain'
-  }
+  client: "pg",
+  connection: process.env.POSTGRES_URI,
+  debug: true
 });
 
 const app = express();
